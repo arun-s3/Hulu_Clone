@@ -29,6 +29,13 @@
     /* font-family: 'graphik-arts', sans-serif; */
     font-family: graphikReg;
 }
+img{
+  max-width: 100%;
+  height: auto;
+}
+body{
+    overflow-x: hidden;
+}
 html{
     scroll-behavior:smooth;
 }
@@ -36,16 +43,18 @@ html{
 /******************************************************PROMOTION BANNER STARTS HERE***********************************************/
 #promotion{
     width:100%;
-    height:74px;
     background-color:hsl(150, 81%, 51%); /* #1CE783 */
     display:flex;
     flex-direction:column;
     align-items:center;
     justify-content:center;
+    padding: 8px 16px;
+    height: auto;
+    text-align: center;
     /* box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.8); */
 }
 #promotion h4{
-    font-size: 18px;
+    font-size: 16px;
     font-weight: 400;
     line-height: 1.32;
     word-spacing: 1px;
@@ -57,7 +66,7 @@ html{
     border-bottom: 1px solid hsl(0, 0%, 45%);
 }
 #promotion p{
-    font-size: 9px;
+    font-size: 10px;
     color: hsl(0, 0%, 25%);
     margin-top: 4.5px;
     letter-spacing: 0.4px;
@@ -67,16 +76,18 @@ html{
 #frontSection{
     background-image: linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0.2)), url("Images/hulu_movies1.jpg");
     width: 100%;
-    height: 100vh;
     background-size: cover;
     background-position: -77px 0;
+    min-height: 100vh;
+    height: auto;
+    background-position: center;
 }
 #header{
     display:flex;
     justify-content:space-between;
     align-items: center;
     height: 85px;
-    padding-inline: 3.2rem;
+    padding-inline: 1.2rem;
 }
 #header>div{
     width:60px;
@@ -93,7 +104,7 @@ html{
 #header h2{
     color: #A8AFBD;
     font-family: graphikSemi;
-    font-size: 14px;
+    font-size: 13px;
     letter-spacing: 0.6px;
 }
 
@@ -108,23 +119,25 @@ html{
     align-items:center;
     justify-content:center;
     color:white;
-    height: 100%;
+    padding: 2.5rem 1rem 3rem;
+    height: auto;
     width: 100%;
-    position: absolute;
-    transform: translate(-50%,-50%);
+    position: static;
     top: 60vh;
     left: 50%;
 }
 #cta-options .cta-bundle{
     display:flex;
-    gap:40px;
-
+    flex-wrap: wrap;
+    justify-content: center;
+    gap:32px;
 }
 .cta-bundle> div{
     display: flex;
     flex-direction: column;
     gap: 29.8px;
-    width: 20rem;
+    width: 100%;
+    max-width: 340px;
 }
 .cta-bundle> div h5{
     font-family: graphikSemi;
@@ -136,7 +149,7 @@ html{
 }
 .cta-bundle> div h2{
     font-family: graphikMed;
-    font-size: 24px;
+    font-size: 20px;
     text-align: center;
 }
 .cta-bundle>div a{
@@ -168,6 +181,7 @@ html{
 #cta-options .terms{
     font-family: graphikReg;
     font-size: 14px;
+    text-align: center;
     margin-top: 20.4px;
     text-decoration: 1px underline #fff;
     cursor: pointer;
@@ -175,9 +189,79 @@ html{
 #cta-options .sign-up{
     font-family: graphikReg;
     font-size: 16px;
+    text-align: center;
     margin-top: 23.4px;
     cursor: pointer;
     border-bottom: 1px solid #fff;
+}
+
+@media (max-width: 600px){
+
+    #promotion h4{
+        font-size: 14px;
+        line-height: 1.4;
+    }
+    #promotion span{
+        display: block;
+        margin-top: 4px;
+    }
+    #header{
+        height: 70px;
+    }
+    #header>div{
+        width: 50px;
+    }
+    .cta-bundle{
+        flex-direction: column;
+    }
+    .cta-bundle>div h5{
+        font-size: 11px;
+    }
+    .cta-bundle>div h2{
+        font-size: 18px;
+    }
+    .cta-bundle>div a{
+        font-size: 13px;
+        padding: 10px 16px;
+    }
+    .cta-bundle>div:last-child p{
+        font-size: 9px;
+    }
+    #cta-options .terms{
+        font-size: 13px;
+    }
+    #cta-options .sign-up{
+        font-size: 14px;
+    }
+}
+
+@media (min-width: 601px) and (max-width: 900px){
+
+    #cta-options{
+        padding-top: 3.5rem;
+    }
+    .cta-bundle>div{
+        width: 18rem;
+    }
+    .cta-bundle>div h2{
+        font-size: 22px;
+    }
+}
+
+@media (min-width: 1200px){
+
+    #header{
+        padding-inline: 4rem;
+    }
+    .cta-bundle{
+        gap: 48px;
+    }
+    .cta-bundle>div{
+        width: 22rem;
+    }
+    .cta-bundle>div h2{
+        font-size: 26px;
+    }
 }
 
 /***************************************FRONT SECTION-HEADER + CTA OPTIONS  ENDS HERE********************************************/
@@ -187,9 +271,11 @@ html{
 #cards-wrapper{
     background-color: 	hsl(225, 15%, 5%);
     color:#fff;
+    padding-bottom: 4.5rem;
 }
 #cards-wrapper> div:first-child{
     text-align:center;
+    padding-inline: 1.5rem;
     padding-top: 5.5rem;
     padding-bottom: 4rem;
 }
@@ -213,15 +299,23 @@ html{
     font-size: 18px;
     font-weight: lighter;
 }
+#cards-wrapper h3 br{
+  display: none;
+}
 .cards{
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
     gap: 24px;
-    padding-inline: 120px;
-    height: 500px;
+    padding-inline: 6rem;
+    height: auto;
 }
 .cards .individual-card{
     border-radius: 9px;
     position: relative;
+    transition: transform 0.3s ease;
+}
+.cards .individual-card:hover{
+  transform: scale(1.03);
 }
 .cards .individual-card::before{
     content: '';
@@ -233,8 +327,10 @@ html{
     width: 100%;
 }
 .cards-img-wrapper{
-    width: 297px;
+    width: 100%;
     height: auto;
+    aspect-ratio: 2 / 3;
+    overflow: hidden;
     border-radius: 9px;
 }
 .cards-img-wrapper img{
@@ -257,6 +353,74 @@ html{
     font-size: 24px;
     margin-top:0.5rem;
 }
+
+@media (max-width: 600px){
+
+  #cards-wrapper > div:first-child{
+    padding-top: 3.5rem;
+    padding-bottom: 3rem;
+  }
+  #cards-wrapper > div:first-child h4{
+    font-size: 12px;
+  }
+  #cards-wrapper > div:first-child h1{
+    font-size: 28px;
+    margin-bottom: 16px;
+  }
+  #cards-wrapper > div:first-child h3{
+    font-size: 14px;
+    line-height: 1.5;
+  }
+  .cards{
+    grid-template-columns: 1fr;
+    padding-inline: 1.25rem;
+  }
+  .cards .cards-header{
+    top: 14px;
+    left: 14px;
+  }
+  .cards .cards-header h3{
+    font-size: 13px;
+  }
+  .cards .cards-header h2{
+    font-size: 18px;
+  }
+}
+
+@media (min-width: 601px) and (max-width: 900px){
+
+    #cards-wrapper>div:first-child h1{
+        font-size: 36px;
+    }
+    #cards-wrapper>div:first-child h3{
+        font-size: 16px;
+    }
+    .cards{
+        grid-template-columns: repeat(2, 1fr);
+        padding-inline: 3rem;
+    }
+}
+
+@media (min-width: 901px) and (max-width: 1200px){
+
+    .cards{
+        grid-template-columns: repeat(4, 1fr);
+        padding-inline: 4rem;
+    }
+    #cards-wrapper>div:first-child h1{
+        font-size: 42px;
+    }
+}
+
+@media (min-width: 1400px){
+
+    .cards{
+        padding-inline: 8rem;
+    }
+    #cards-wrapper>div:first-child h1{
+        font-size: 52px;
+    }
+}
 /******************************************************CARD SECTION ENDS HERE***********************************************/
 /******************************************************ABOUT+LIVE SPORTS CONTAINER STARTS HERE*******************************/
 
@@ -264,9 +428,13 @@ html{
     background-color: hsl(225, 15%, 5%);
     text-align: center;
     color: #fff;
+    overflow-x: hidden;
 }
 #about>div:first-child{
-    padding: 6rem 24rem 16px;
+    padding-block: 24rem;
+    padding-inline: 2rem;
+    max-width: 1200px;
+    margin-inline: auto;
 }
 #about>div:first-child h3{
     color: hsl(150, 81%, 51%);
@@ -306,12 +474,19 @@ html{
     color: #000;
     letter-spacing: 0.6px;
 }
+#about>div:first-child .liveTV-description{
+  max-width: 900px;
+  margin-inline: auto;
+  line-height: 1.6;
+}
 #about .terms{
+    max-width: 1200px;
     font-family: graphikReg;
     font-size: 10px;
     color: hsl(0, 0%, 60%);
-    padding-inline: 20rem;
+    padding-inline: 2rem;
     margin-bottom: 1.4rem;
+    margin-inline: auto;
 }
 #about>div:nth-child(2){ 
     padding-bottom:5rem;
@@ -327,13 +502,14 @@ html{
 }
 #live-sports-container{
     position:relative;
-    height:110vh;
+    height:auto;
+    min-height: 100vh;
     width:100%;
     background-image:url('Images/hulu_sports.jfif');
     background-size: cover;
     display:flex;
-    padding-left: 19%;
-    padding-top: 13%;
+    align-items: center;
+    padding: 6rem 2rem;
 }
 #live-sports-container::before{
     content: '';
@@ -345,7 +521,8 @@ html{
     width: 100%;
 }
 #live-sports-container .live-sports{
-    width:40%;
+    width:100%;
+    max-width: 520px;
     text-align: start;
     z-index: 2;
 }
@@ -410,12 +587,127 @@ html{
     text-decoration:1px solid underline;
     padding-left:3px;
 }
+
+@media (max-width: 600px){
+
+    #about>div:first-child{
+        padding-top: 3.5rem;
+    }
+    #about>div:first-child h3{
+        font-size: 12px;
+    }
+    #about>div:first-child h1{
+        font-size: 28px;
+    }
+    #about>div:first-child .liveTV-description{
+        font-size: 14px;
+    }
+    #about>div:first-child .limited-time{
+        font-size: 15px;
+    }
+    #about>div:first-child a{
+        font-size: 13px;
+        padding: 0.8rem 1.2rem;
+    }
+    #about .terms{
+        font-size: 9px;
+        padding-inline: 1.5rem;
+    }
+    #about .terms+a{
+        font-size: 13px;
+    }
+    #live-sports-container{
+        padding: 4rem 1.25rem;
+        background-position: center;
+    }
+    #live-sports-container .live-sports-menu{
+        gap: 12px;
+        font-size: 11px;
+        flex-wrap: wrap;
+    }
+    #live-sports-container .live-sports-content h1{
+        font-size: 28px;
+    }
+    #live-sports-container .live-sports-content p{
+        font-size: 14px;
+        line-height: 1.5;
+    }
+    #live-sports-container .brands{
+        gap: 1rem;
+        flex-wrap: wrap;
+    }
+    #live-sports-container .brands>div{
+        width: 42px;
+        height: 42px;
+    }
+}
+
+@media (min-width: 601px) and (max-width: 900px){
+
+    #about>div:first-child{
+        padding-top: 4.5rem;
+    }
+    #about>div:first-child h1{
+        font-size: 36px;
+    }
+    #about>div:first-child .liveTV-description{
+        font-size: 16px;
+    }
+    #about .terms{
+        padding-inline: 4rem;
+    }
+    #live-sports-container{
+        padding: 6rem 4rem;
+    }
+    #live-sports-container .live-sports{
+        max-width: 600px;
+    }
+    #live-sports-container .live-sports-content h1{
+        font-size: 36px;
+    }
+}
+
+@media (min-width: 901px) and (max-width: 1200px){
+
+    #about>div:first-child{
+        padding-inline: 6rem;
+    }
+    #about .terms{
+        padding-inline: 6rem;
+    }
+    #live-sports-container{
+        padding-left: 8%;
+    }
+    #live-sports-container .live-sports{
+        width: 55%;
+    }
+}
+
+@media (min-width: 1400px){
+
+    #about>div:first-child{
+        padding-inline: 12rem;
+    }
+    #about .terms{
+        padding-inline: 12rem;
+    }
+    #live-sports-container{
+        padding-left: 18%;
+    }
+    #live-sports-container .live-sports-content h1{
+        font-size: 52px;
+    }
+}
 /******************************************************ABOUT+LIVE SPORTS CONTAINER ENDS HERE*******************************/
 /*****************************************************PLAN-CONTAINER STARTS HERE*******************************************/
 #plan-container{
     background-color: #0B0C0F;
-    height:218vh;
-    padding:70px 17% 15px;
+    height:auto;
+    padding:17%;
+    max-width: 100%;
+    margin-inline: auto;
+    padding-inline: 2rem;
+    overflow-x: hidden;
     color:#fff;
 }#plan-container>div:first-child{
     text-align: center;
@@ -424,8 +716,11 @@ html{
 }
 #plan-container>div:first-child h1{
     font-family: graphikSemi;
-    font-size: 48px;
+    font-size: clamp(28px, 4vw, 48px);
     letter-spacing: 0.2px;
+}
+#plan-container .div1 > h4{
+    font-size: clamp(14px, 2vw, 18px);
 }
 #plan-container .div1>.hidden-fee{
     font-family: graphikReg;
@@ -443,9 +738,10 @@ html{
 
 #plan-container .div2{
     display:flex;
-    gap:55px;     
+    gap:3rem;     
     align-items:center;
     justify-content:center;
+    flex-wrap: wrap;
     padding-block:2.2rem;
     border-bottom: 1px solid #9999;
 }
@@ -490,6 +786,8 @@ html{
 #plan-container .div2>.hulu-cta-buttons{
     display:flex;
     gap:24px;
+    justify-content: center;
+    flex-wrap: wrap;
     text-align:center;
 }
 
@@ -509,7 +807,8 @@ html{
     letter-spacing: 0.6px;
     color: #040405;
     background-color: #fff;
-    padding: 0.9rem 5rem;
+    padding: 0.9rem 2.5rem;
+    white-space: nowrap;
     border-radius: 7px;
 }
 .hulu-cta-buttons .cta-bundle1>a:first-child{
@@ -555,9 +854,11 @@ html{
     display:flex;
     flex-direction:column;
     gap:10px;
+    margin-top: 2.5rem;
 }
 .price-table>div{
     display:grid;
+    align-items: center;
     grid-template-columns:2fr 1fr 1fr;
     border-bottom: 1px solid #9999;
     padding-block: 1.8rem;
@@ -597,29 +898,108 @@ html{
     padding-left: 15px;
     width:100%;
 }
+
+@media (max-width: 600px){
+
+  #plan-container{
+    padding: 3rem 1.25rem;
+  }
+  #plan-container .div2{
+    flex-direction: column;
+    text-align: center;
+  }
+  .plan-switch{
+    align-items: center;
+  }
+  .hulu-cta-buttons{
+    flex-direction: column;
+    gap: 2rem;
+  }
+  .hulu-cta-buttons .price{
+    width: 100%;
+  }
+  .price-table > div{
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+    padding-block: 1.2rem;
+  }
+  .price-table > div span{
+    font-weight: 600;
+  }
+  .price-table > div p{
+    justify-self: start;
+  }
+  .price-table div > p[class="checked"]{
+    font-size: 18px;
+  }
+  .price-table .conditions > p{
+    font-size: 9px;
+    padding-left: 0;
+  }
+  #plan-container .show-add-ons{
+    font-size: 14px;
+  }
+}
+
+@media (min-width: 601px) and (max-width: 900px){
+
+  #plan-container{
+    padding-inline: 3rem;
+  }
+  #plan-container .div2{
+    gap: 2.5rem;
+  }
+  .hulu-cta-buttons .price{
+    padding: 0.9rem 3.5rem;
+  }
+  .price-table > div{
+    grid-template-columns: 2fr 1fr 1fr;
+    font-size: 13px;
+  }
+}
+@media (min-width: 901px) and (max-width: 1200px){
+
+  #plan-container{
+    padding-inline: 5rem;
+  }
+  .hulu-cta-buttons .price{
+    padding: 0.9rem 4rem;
+  }
+}
+
+@media (min-width: 1400px){
+
+  #plan-container{
+    padding-inline: 10rem;
+  }
+  .price-table > div{
+    font-size: 15px;
+  }
+}
 /*****************************************************PLAN-CONTAINER ENDS HERE*******************************************/
 /*****************************************************FOOTER STARTS HERE*******************************************/
+
 footer{
-    height:70vh;
-    width:100%;
+    width: 100%;
     background-color: hsl(216, 12%, 92%);
+    padding-bottom: 1.5rem;
+}
+footer .menu-items, .social-media, footer .copyright{
+    max-width: 1200px;
+    margin-inline: auto;
+    padding-inline: 2rem;
 }
 footer .menu-items{
-    display:flex;
-    gap:4rem;
-    padding:4rem 10rem 2rem;
+    display: grid;
+    grid-template-columns: repeat(6, minmax(120px, 1fr));
+    gap: 3rem;
+    padding-top: 5rem;
 }
 footer .menu-single-column{
-    display:flex;
-    flex-direction:column;
-    gap:12px;
-}
-footer .menu-single-column>h6{
-    font-family:graphikReg;
-    font-size:14px;
-    color:hsl(221, 14%, 55%);
-    font-weight:lighter;
-    white-space:nowrap;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    line-height: 1.5;
 }
 footer .menu-single-column h4{
     font-family: graphikMed;
@@ -628,47 +1008,85 @@ footer .menu-single-column h4{
     font-size: 12px;
     font-weight: 400;
 }
-footer .menu-single-column h4[class="invisible"]{
-    visibility:hidden;
+footer .menu-single-column h4.invisible{
+    visibility: hidden;
+}
+footer .menu-single-column h6{
+    font-family: graphikReg;
+    font-size: 14px;
+    color: hsl(221, 14%, 55%);
+    font-weight: lighter;
+    white-space: nowrap;
 }
 footer .footer-line{
-    height:1px;
-    background-color:hsl(221, 14%, 55%);
-    margin-inline: 10rem;
-    margin-top: 4rem;
+    height: 1px;
+    background-color: hsl(221, 14%, 55%);
+    margin: 4rem auto 0;
+    max-width: 1200px;
 }
 .social-media{
-    display:flex;
+    display: flex;
     gap: 1.7rem;
     padding-block: 3rem;
-    margin-inline: 10rem;
     font-size: 22px;
     color: hsl(221, 14%, 43%);
-    padding-left: 5px;
 }
 footer .copyright{
-    display:flex;
-    gap:25px;
-    align-items:center;
-    color:hsl(221, 14%, 57%);
-    padding-top:0.4rem;
-    width:100%;
-    white-space:nowrap;
-    font-size: 12px;
-    padding-inline: 11rem;
-    white-space: nowrap;
-    font-family: graphikReg;
-    letter-spacing: 0.2px;
-}
-footer .copyright>.about-ads-wrapper{
     display: flex;
-    align-items:center;
-    gap:2px;
-    width:75px;
+    flex-wrap: wrap;
+    gap: 21px;
+    align-items: center;
+    font-family: graphikReg;
+    font-size: 12px;
+    color: hsl(221, 14%, 57%);
+}
+footer .copyright .about-ads-wrapper{
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    width: auto;
+}
+footer .copyright .about-ads-wrapper img{
+    width: 18px;
 }
 
-footer .copyright>.about-ads-wrapper>img{
-    width:100%;
+@media (min-width: 901px) and (max-width: 1200px){
+    footer .disney h6{
+        white-space: wrap;
+    }
 }
+
+@media (max-width: 900px){
+    footer .menu-items{
+        grid-template-columns: repeat(3, 1fr);
+    }
+    footer .menu-single-column h6{
+        white-space: normal;
+    }
+}
+
+@media (max-width: 600px){
+    footer .menu-items{
+        grid-template-columns: repeat(2, 1fr);
+        padding-top: 3rem;
+    }
+    footer .menu-single-column h4.invisible{
+        display: none;
+    }
+    .social-media{
+        padding-block: 2rem;
+    }
+    footer .copyright{
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+    footer .copyright>span, footer .copyright>.about-ads-wrapper{
+        width: 100%;
+    }
+}
+
+
+
 /*****************************************************FOOTER ENDS HERE*******************************************/
 
