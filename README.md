@@ -15,7 +15,7 @@ This project focuses on  **layout precision, animation timing, responsiveness, a
 
 ---
 
-## 🔗 Live Demo
+## 🔗 Live Web Application
 
 👉 [robogeniz.netlify.app](https://robogeniz.netlify.app)
 
@@ -132,6 +132,7 @@ No jQuery, no animation libraries — just modern browser APIs.
 * **HTML5**
 * **CSS3**
 * **Vanilla JavaScript**
+* **Intersection Observer**
 * **Font Awesome** (icons)
 
 ---
